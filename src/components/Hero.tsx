@@ -1,19 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeUp from "@/animation/FadeUp";
-import Link from "next/link";
 
 // Inside your component
-<Link href="/resume.pdf">
-  <a
-    className="mt-4 inline-block rounded-lg px-6 py-3 text-lg font-medium text-white shadow-lg hover:bg-blue-700"
-    style={{ backgroundColor: "#156064" }}
-    target="_blank"
-  >
-    View Resume
-  </a>
-</Link>
 
+// eslint-disable-next-line prettier/prettier
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
