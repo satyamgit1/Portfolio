@@ -2,13 +2,13 @@ import { TShowCaseListDetatils } from "@/components/ShowCaseList";
 
 export const EDUCATION: TShowCaseListDetatils[] = [
   {
-    title: "Bachelor Of Engineering in Electronics and Telecommunication",
+    title: "Bachelor Of Engineering in Computer Science",
     organisation: {
       name: "Rizvi College Of Engineering",
       href: "https://eng.rizvi.edu.in/",
     },
     date: "2019-2023",
-    location: "Bandra, Mumbai",
+    location: "Kandivali, Mumbai",
     description:
       "Relevant courses included Data Structures and Algorithms, Web Design, Cloud Computing, Artificial Neural Network and Database Management.",
   },

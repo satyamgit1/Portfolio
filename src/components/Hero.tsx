@@ -68,7 +68,7 @@ export default function Hero() {
                 className="mt-4 inline-block rounded-lg px-6 py-3 text-lg font-medium text-white shadow-lg hover:bg-blue-700"
                 style={{ backgroundColor: "#156064" }}
               >
-                View Resume
+                Check Resume
               </a>
             </FadeUp>
           </AnimatePresence>
