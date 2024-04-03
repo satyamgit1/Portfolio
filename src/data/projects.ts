@@ -5,7 +5,7 @@ import { siteMetadata } from "@/data/siteMetaData.mjs";
 export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
   {
     index: 0,
-    title: "Json Tree",
+    title: "Society Sathi",
     href: "/projects",
     tags: ["Nextjs", "Tailwindcss", "Monaco Editor", "Vercel"],
     image: {
@@ -15,7 +15,7 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
   },
   {
     index: 1,
-    title: "Many Games",
+    title: "Bhagavad-Gita",
     href: "/projects",
     tags: [
       "Reactjs",

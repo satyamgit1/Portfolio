@@ -60,7 +60,7 @@ export default function About() {
           <AnimatePresence>
             <FadeUp key="title-greeting" duration={0.6}>
               <h1 className="bg-gradient-to-r from-teal-500 to-tera-500 bg-clip-text text-6xl font-bold text-transparent dark:from-teal-200 dark:to-teal-500 sm:text-7xl md:text-6xl lg:text-5xl xl:text-7xl">
-                Hi, I&apos;m Amit Chauhan
+                Hi, I&apos;m Satyam Singh
               </h1>
             </FadeUp>
             <FadeUp key="description-1" duration={0.6} delay={0.2}>

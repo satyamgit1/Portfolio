@@ -5,7 +5,7 @@ export const EDUCATION: TShowCaseListDetatils[] = [
     title: "Bachelor Of Engineering in Computer Science",
     organisation: {
       name: "Thakur  College Of Engineering",
-      href: "https://eng.rizvi.edu.in/",
+      href: "https://www.tcetmumbai.in/",
     },
     date: "2020-2024",
     location: "Kandivali, Mumbai",
@@ -16,18 +16,18 @@ export const EDUCATION: TShowCaseListDetatils[] = [
     title: "Higher Secondary School",
     organisation: {
       name: "St. Anne's Junior College",
-      href: "https://www.mithibai.ac.in/",
+      href: "https://stannesconventschool.com/",
     },
     date: "2018-2020",
     location: "Vasai, Mumbai",
     description:
-      "Completed the course in Electronics Bifocal Science with 70%. Started freelancing making 3D assets for games. Got interested in game development and learned unity and c#",
+      "Completed the course in Computer  Science with 70%. Started freelancing Basic Web Dev. Got interested in Coding Learn C++",
   },
   {
     title: "Secondary School Education",
     organisation: {
       name: "St. Francis High School",
-      href: "https://holyfamilyandheri.org/",
+      href: "https://www.uniapply.com/school/st-francis-high-school-vasai-west-palghar/",
     },
     date: "2017-2018",
     location: "Vasai, Mumbai",

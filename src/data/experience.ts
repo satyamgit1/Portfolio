@@ -2,9 +2,9 @@ import { TShowCaseListDetatils } from "@/components/ShowCaseList";
 
 export const EXPERIENCE: TShowCaseListDetatils[] = [
   {
-    title: "Reactjs Frontend Developer",
+    title: "Full Stack Developer(MERN)",
     organisation: {
-      name: "Skima",
+      name: "Coding Chaska",
       href: "https://skima.ai/",
     },
     date: "Oct 2023 - Present",
