@@ -33,7 +33,7 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
   },
   {
     index: 2,
-    title: "Kanban",
+    title: "Bhagavad-Gita",
     href: "/projects",
     tags: ["Reactjs", "Vite", "Tailwindcss", "Vercel", "Zustand", "React DND"],
     image: {
@@ -45,7 +45,7 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
 
 export const PROJECTS_CARD: ProjectCardProps[] = [
   {
-    name: "Json tree",
+    name: "SocietySathi",
     favicon: "/images/projects/logos/jsontree.ico",
     imageUrl: [
       "/images/projects/jsontreeLight.webp",
@@ -57,7 +57,7 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
     liveWebsiteHref: "https://jsontree.vercel.app",
   },
   {
-    name: "Kanban app",
+    name: "Bhagavad-gita",
     favicon: "/images/projects/logos/kanban.ico",
     imageUrl: [
       "/images/projects/kanbanLight.webp",
