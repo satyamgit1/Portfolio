@@ -24,7 +24,7 @@ export default function About() {
           images: [
             {
               url: `${siteMetadata.siteUrl}${siteMetadata.twitterImage}`,
-              alt: "Amit Chauhan - Portfolio Image",
+              alt: "Satyam Singh - Portfolio Image",
             },
           ],
           siteName: siteMetadata.siteName,
