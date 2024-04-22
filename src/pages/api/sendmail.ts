@@ -9,22 +9,6 @@ const REQUEST_PER_HOUR = 5 as const;
 const RATELIMIT_DURATION = 3600000 as const;
 const MAX_USER_PER_SECOND = 100 as const;
 
-/*
-  Rate Limiting Strategy:
-
-  WARNING: This rate limiting strategy uses a combination of client IP address and user agent for identification.
-  - Pros: Provides a more robust identification mechanism.
-  - Cons: 
-    - Users behind certain proxies or networks might share the same IP address.
-    - Determined attackers can still potentially circumvent these measures.
-    - Privacy concerns: Collecting IP addresses and user agents may raise privacy considerations.
-  
-  If either the client's IP address or user agent is missing, a fallback mechanism defaults to using a UUID stored in cookies.
-  - Pros: Ensures a default identification mechanism is in place.
-  - Cons: UUIDs may not be entirely foolproof and can be manipulated by users.
-
-  Always consider the privacy implications of collecting and using such information. Be transparent with users about the data you collect for rate limiting purposes.
-*/
 const limiter = rateLimiterApi({
   interval: RATELIMIT_DURATION,
   uniqueTokenPerInterval: MAX_USER_PER_SECOND,
@@ -39,27 +23,19 @@ const limiter = rateLimiterApi({
         if (cookieExpiration) {
           const expirationDate = new Date(cookieExpiration);
           if (expirationDate && expirationDate <= new Date()) {
-            // Cookie has expired, generate a new UUID
             const newUuidToken = v4();
             res.setHeader(
               "Set-Cookie",
-              `userUuid=${newUuidToken}; Max-Age=${
-                60 * 60 * 24
-              }; SameSite=Strict`,
+              `userUuid=${newUuidToken}; Max-Age=${60 * 60 * 24}; SameSite=Strict`,
             );
-
-            // Set a new expiration date (e.g., 24 hours from now)
             const newExpirationDate = new Date();
             newExpirationDate.setSeconds(
               newExpirationDate.getSeconds() + 60 * 60 * 24,
             );
             res.setHeader(
               "Set-Cookie",
-              `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${
-                60 * 60 * 24
-              }; SameSite=Strict`,
+              `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${60 * 60 * 24}; SameSite=Strict`,
             );
-
             return newUuidToken;
           }
           return userUuidToken;
@@ -75,9 +51,7 @@ const limiter = rateLimiterApi({
         );
         res.setHeader(
           "Set-Cookie",
-          `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${
-            60 * 60 * 24
-          }; SameSite=Strict`,
+          `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${60 * 60 * 24}; SameSite=Strict`,
         );
         return userUuidToken;
       } else {
@@ -92,9 +66,7 @@ const limiter = rateLimiterApi({
         );
         res.setHeader(
           "Set-Cookie",
-          `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${
-            60 * 60 * 24
-          }; SameSite=Strict`,
+          `userUuid_expires=${newExpirationDate.toUTCString()}; Max-Age=${60 * 60 * 24}; SameSite=Strict`,
         );
         return userUuidToken;
       }
@@ -138,7 +110,25 @@ const sendMail = async function (
     from: process.env.NODEMAILER_USER,
     to: process.env.NODEMAILER_USER,
     subject: "Portfolio: [" + subject + " ]",
-    text: `${name}: <${email}>\n${message}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <h2 style="color: #333; margin-bottom: 20px;">Message Details</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr style="background-color: #f2f2f2;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Subject</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Message</th>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;">${name}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${email}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${subject}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${message}</td>
+          </tr>
+        </table>
+      </div>
+    `,
   };
 
   return new Promise((resolve) => {
@@ -146,13 +136,11 @@ const sendMail = async function (
       if (error) {
         resolve({ status: 500, message: "Failed to send mail" });
       } else {
-        resolve({ status: 200, message: "Mail send successfully" });
+        resolve({ status: 200, message: "Mail sent successfully" });
       }
     });
   });
 };
-
-
 
 const handler = async (
   req: NextApiRequest,
@@ -191,18 +179,4 @@ const handler = async (
 
     const { name, email, subject, message } = body;
 
-    const response = await sendMail(name, email, subject, message);
-    res.status(response.status).send(response);
-  } catch (error: any) {
-    if (error?.status === 429) {
-      res.status(429).json({ status: 429, message: "Rate limit exceeded" });
-    } else {
-      res.status(error.status || 500).json({
-        status: 500,
-        message: error.message || "Internal server error",
-      });
-    }
-  }
-};
-
-export default handler;
+    const response = await sendMail(name, email,
