@@ -138,7 +138,20 @@ const sendMail = async function (
     from: process.env.NODEMAILER_USER,
     to: process.env.NODEMAILER_USER,
     subject: "Portfolio: [" + subject + " ]",
-    text: `${name}: <${email}>\n${message}`,
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong></p>
+      <table style="border-collapse: collapse;">
+        <tr>
+          <th style="border: 1px solid #dddddd; padding: 8px;">Message</th>
+        </tr>
+        <tr>
+          <td style="border: 1px solid #dddddd; padding: 8px;">${message}</td>
+        </tr>
+      </table>
+    `,
   };
 
   return new Promise((resolve) => {
@@ -146,7 +159,7 @@ const sendMail = async function (
       if (error) {
         resolve({ status: 500, message: "Failed to send mail" });
       } else {
-        resolve({ status: 200, message: "Mail send successfully" });
+        resolve({ status: 200, message: "Mail sent successfully" });
       }
     });
   });
