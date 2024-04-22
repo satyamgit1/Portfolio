@@ -138,7 +138,25 @@ const sendMail = async function (
     from: process.env.NODEMAILER_USER,
     to: process.env.NODEMAILER_USER,
     subject: "Portfolio: [" + subject + " ]",
-    text: `${name}: <${email}>\n${message}`,
+    html: `
+      <div style="font-family: Arial, sans-serif; padding: 20px;">
+        <h2 style="color: #333; margin-bottom: 20px;">Message Details</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr style="background-color: #f2f2f2;">
+            <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Subject</th>
+            <th style="padding: 10px; border: 1px solid #ddd;">Message</th>
+          </tr>
+          <tr>
+            <td style="padding: 10px; border: 1px solid #ddd;">${name}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${email}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${subject}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${message}</td>
+          </tr>
+        </table>
+      </div>
+    `,
   };
 
   return new Promise((resolve) => {
@@ -146,11 +164,13 @@ const sendMail = async function (
       if (error) {
         resolve({ status: 500, message: "Failed to send mail" });
       } else {
-        resolve({ status: 200, message: "Mail send successfully" });
+        resolve({ status: 200, message: "Mail sent successfully" });
       }
     });
   });
 };
+
+
 
 const handler = async (
   req: NextApiRequest,
