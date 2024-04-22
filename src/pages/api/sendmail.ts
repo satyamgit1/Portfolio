@@ -179,4 +179,18 @@ const handler = async (
 
     const { name, email, subject, message } = body;
 
-    const response = await sendMail(name, email,
+    const response = await sendMail(name, email, subject, message);
+    res.status(response.status).send(response);
+  } catch (error: any) {
+    if (error?.status === 429) {
+      res.status(429).json({ status: 429, message: "Rate limit exceeded" });
+    } else {
+      res.status(error.status || 500).json({
+        status: 500,
+        message: error.message || "Internal server error",
+      });
+    }
+  }
+};
+
+export default handler;
