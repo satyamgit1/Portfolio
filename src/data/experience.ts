@@ -9,9 +9,10 @@ export const EXPERIENCE: TShowCaseListDetatils[] = [
     },
     date: "Sept 2023 – Jan 2024",
     location: "Mumbai",
-    description: "Created in-depth coding solutions and blog posts covering diverse topics, resulting in a 30% increase in user retention and a15% growth in monthly active users\n" +
-    "● Built and integrated a quiz page with real-time performance tracking metrics to automate evaluation processes, leading toincreased student retention rates and improved learning outcomes.\n" +
-    "● Directed the development of a high-impact scholarship program webpage, resulting in a 40% increase in student applicationsand rise in enrollment rates, effectively boosting the institute’s student outreach and growth initiatives.",
+    description:
+      "Created in-depth coding solutions and blog posts covering diverse topics, resulting in a 30% increase in user retention and a15% growth in monthly active users\n" +
+      "● Built and integrated a quiz page with real-time performance tracking metrics to automate evaluation processes, leading toincreased student retention rates and improved learning outcomes.\n" +
+      "● Directed the development of a high-impact scholarship program webpage, resulting in a 40% increase in student applicationsand rise in enrollment rates, effectively boosting the institute’s student outreach and growth initiatives.",
   },
   {
     title: "SDE - Frontend Developer",
