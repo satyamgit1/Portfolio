@@ -5,7 +5,7 @@ export const siteMetadata = {
   description: "Frontend and Reactjs developer",
   language: "en-us",
   theme: "light",
-  siteName: "amitchauhan.me",
+  siteName: "satyam singh portfolio",
   siteUrl: "https://satyamsingh.site",
   siteRepo: "https://github.com/satyamgit1?tab=repositories",
   siteLogo: "/favicon.ico",
