@@ -9,7 +9,6 @@ import {
   FramerMotionIcon,
   GithubIcon,
   ReactRouterDomIcon,
-
 } from "@/components/Icons";
 import { SkillPillProps } from "@/components/Skills";
 
