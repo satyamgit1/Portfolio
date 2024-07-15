@@ -8,8 +8,8 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
     href: "/projects",
     tags: ["Nextjs", "Tailwindcss", "Monaco Editor", "Vercel"],
     image: {
-      LIGHT: "/images/projects/jsontreeLight.webp",
-      DARK: "/images/projects/jsontreeDark.webp",
+      LIGHT: "/images/projects/societysathi_light.png",
+      DARK: "/images/projects/societysathi_dark.png",
     },
   },
   {
@@ -26,15 +26,15 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
       "Vercel",
     ],
     image: {
-      LIGHT: "/images/projects/manyGamesLight.webp",
-      DARK: "/images/projects/manyGamesDark.webp",
+      LIGHT: "/images/projects/gita_main_light.png",
+      DARK: "/images/projects/gita_main_dark.png",
     },
   },
   {
     index: 2,
-    title: "Bhagavad-Gita",
+    title: "Codeverse",
     href: "/projects",
-    tags: ["Reactjs", "Vite", "Tailwindcss", "Vercel", "Zustand", "React DND"],
+    tags: ["Reactjs", "Vite", "Tailwindcss", "Vercel", "Next js", "React Pdf"],
     image: {
       LIGHT: "/images/projects/kanbanLight.webp",
       DARK: "/images/projects/kanbanDark.webp",
@@ -47,8 +47,11 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
     name: "SocietySathi",
     favicon: "/images/projects/logos/societylogo.ico",
     imageUrl: [
-      "/images/projects/jsontreeLight.webp",
+      "/images/projects/societysathi_light.png",
+      "/images/projects/society_sathi_feature.png",
+      "/images/projects/society_sathi_login.png",
       "/images/projects/societysathi2.webp",
+      "/images/projects/society_sathi_flatview.png",
     ],
     description:
       "Introducing SocietySathi - Your Ultimate Apartment Management Solution! 🏢  Excited to share SocietySathi, a robust Apartment Management System built with Next.js, Express, Node.js, and MongoDB. 🚀",
@@ -59,8 +62,8 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
     name: "Bhagavad-gita",
     favicon: "/images/projects/logos/gitalogo.ico",
     imageUrl: [
-      "/images/projects/kanbanLight.webp",
-      "/images/projects/gita2.webp",
+      "/images/projects/gita_main_light.png",
+      "/images/projects/bhagavadgita_login.png",
       "/images/projects/bhagavadgita2.webp",
       "/images/projects/gitacontact.webp",
       "/images/projects/gitaaudio.webp",
