@@ -36,8 +36,8 @@ export const PROJECT_SHOWCASE: ProjectShowcaseListProps[] = [
     href: "/projects",
     tags: ["Reactjs", "Vite", "Tailwindcss", "Vercel", "Next js", "React Pdf"],
     image: {
-      LIGHT: "/images/projects/kanbanLight.webp",
-      DARK: "/images/projects/kanbanDark.webp",
+      LIGHT: "/images/projects/codeverse_light.webp",
+      DARK: "/images/projects/codeverse_dark.webp",
     },
   },
 ];
@@ -72,5 +72,20 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
       "We developed a website centered around the Hindu scripture Bhagavad Gita using Next.js and Tailwind CSS. Integrated API calls to retrieve and display chapter and verse data dynamically. The project showcases proficiency in front-end technologies and a commitment to cultural and religious exploration through digital platforms.",
     sourceCodeHref: "https://github.com/satyamgit1/bhagavad_gita",
     liveWebsiteHref: "https://www.bhagavadgita.site/",
+  },
+  {
+    name: "Codeverse",
+    favicon: "/images/projects/logos/codeverse_logo.ico",
+    imageUrl: [
+      "/images/projects/codeverse_light.webp",
+      "/images/projects/codeverse_project.webp",
+      "/images/projects/codeverse_editor.webp",
+      "/images/projects/gitacontact.webp",
+      "/images/projects/codeverse_project.webp",
+    ],
+    description:
+      "We developed a website centered around the Hindu scripture Bhagavad Gita using Next.js and Tailwind CSS. Integrated API calls to retrieve and display chapter and verse data dynamically. The project showcases proficiency in front-end technologies and a commitment to cultural and religious exploration through digital platforms.",
+    sourceCodeHref: "https://github.com/satyamgit1/CodeVerse",
+    liveWebsiteHref: "https://code-verse-xi.vercel.app/",
   },
 ];
