@@ -1,6 +1,20 @@
+/* eslint-disable prettier/prettier */
 import { TShowCaseListDetatils } from "@/components/ShowCaseList";
 
 export const EXPERIENCE: TShowCaseListDetatils[] = [
+  {
+    title: "ServiceNow Developer",
+    organisation: {
+      name: "Growinity Solutions",
+      href: "https://growinitysolutions.com/",
+    },
+    date: "June 2024 – Present",
+    location: "Pune",
+    description:
+      "● Design and implement solutions to optimize and automate IT workflows, enhancing service delivery and operational efficiency\n" + 
+      "● Collaborate with cross-functional teams to customize and integrate ServiceNow applications\n" +
+      "● Ensure alignment with business objectives and industry best practices.",
+  },
   {
     title: "Full Stack Developer(MERN)",
     organisation: {
