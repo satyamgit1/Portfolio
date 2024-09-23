@@ -63,7 +63,7 @@ export default function Hero() {
             {/* Resume Button */}
             <FadeUp key="resume-button" duration={0.6} delay={0.4}>
               <a
-                href="https://drive.google.com/file/d/1k0rBwnWQMAygxOHhD3WLu9Da1tvpFDAv/view?usp=sharing"
+                href="https://drive.google.com/file/d/19JPf2eq8_ywrouW9M4BXpPKe_c7bVOOE/view?usp=sharing"
                 target="_blank"
                 className="mt-4 inline-block rounded-lg px-6 py-3 text-lg font-medium text-white shadow-lg hover:bg-blue-700"
                 style={{ backgroundColor: "#156064" }}
